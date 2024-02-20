@@ -1,4 +1,2 @@
-example_setting:
-  default: true
-  description:
-    en: A description of a setting.
+main_site_url:
+  default: https://www.comparajogos.com.br

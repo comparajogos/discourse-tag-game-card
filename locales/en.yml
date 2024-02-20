@@ -1,2 +1,4 @@
 en:
-  placeholder: placeholder
+  theme_metadata:
+    settings:
+      main_site_url: Main site URL, should be a Compara Jogos instance
