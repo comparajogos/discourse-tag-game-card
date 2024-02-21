@@ -2,6 +2,7 @@ import Component from "@glimmer/component";
 import { action } from "@ember/object";
 import { inject as service } from "@ember/service";
 import TagGameCardContents from "../../components/tag-game-card-contents";
+import { TAG_COOKED_SELECTOR } from "../../initializers/tag-game-card";
 
 export default class TagGameCard extends Component {
   @service menu;
@@ -14,7 +15,7 @@ export default class TagGameCard extends Component {
 
   @action
   async handleClick(event) {
-    const matchingEl = event.target.closest("a.hashtag-cooked[data-type=tag]");
+    const matchingEl = event.target.closest(TAG_COOKED_SELECTOR);
 
     if (matchingEl) {
       event.preventDefault();

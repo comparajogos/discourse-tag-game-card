@@ -1,6 +1,6 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 
-const TAG_COOKED_SELECTOR = "a.hashtag-cooked[data-type=tag]";
+export const TAG_COOKED_SELECTOR = "a.hashtag-cooked[data-type=tag]";
 
 export default {
   name: "tag-game-card",
