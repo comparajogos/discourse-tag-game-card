@@ -1,10 +1,16 @@
-import TagGameCardContents from "../../components/tag-game-card-contents";
 import Component from "@glimmer/component";
-import { inject as service } from "@ember/service";
 import { action } from "@ember/object";
+import { inject as service } from "@ember/service";
+import TagGameCardContents from "../../components/tag-game-card-contents";
 
 export default class TagGameCard extends Component {
   @service menu;
+
+  constructor() {
+    super(...arguments);
+
+    document.addEventListener("click", this.handleClick);
+  }
 
   @action
   async handleClick(event) {
@@ -28,18 +34,9 @@ export default class TagGameCard extends Component {
     }
   }
 
-  constructor() {
-    super(...arguments);
-
-    document
-      .querySelector("#main-outlet")
-      .addEventListener("click", this.handleClick);
-  }
-
   willDestroy() {
-    document
-      .querySelector("#main-outlet")
-      .removeEventListener("click", this.handleClick);
+    super.willDestroy(...arguments);
+    document.removeEventListener("click", this.handleClick);
 
     this.menuInstance?.destroy();
   }

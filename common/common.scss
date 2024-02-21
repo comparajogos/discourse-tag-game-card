@@ -1,3 +1,7 @@
 .tag-game-card-contents {
   padding: 0.5em 1em;
 }
+
+[data-identifier="tag-game-card-contents"]:not(:has(.tag-game-card-contents)) {
+  display: none;
+}

@@ -1,2 +1,4 @@
 main_site_url:
   default: https://www.comparajogos.com.br
+main_site_graphql_url:
+  default: https://api.comparajogos.com.br/v1/graphql
