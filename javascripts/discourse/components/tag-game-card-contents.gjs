@@ -4,6 +4,7 @@ import { inject as service } from "@ember/service";
 import graphql from "../lib/graphql";
 import dIcon from "discourse-common/helpers/d-icon";
 import TagGameCardInfo from "./tag-game-card-info";
+import TagGameCardBestPlayers from "./tag-game-card-best-players";
 
 const TAG_QUERY = `fragment productSummary on product_price { 
   id
@@ -55,11 +56,8 @@ export default class TagGameCardContents extends Component {
     this.priceData = data.product_price[0] || null;
     this.tagData = this.priceData.product || null;
 
-
-    console.log(this.priceData)
-    console.log(this.tagData)
-
-
+    console.log(this.priceData);
+    console.log(this.tagData);
 
     if (!this.tagData) {
       this.router.transitionTo("tag.show", this.args.data.tag);
@@ -108,7 +106,10 @@ export default class TagGameCardContents extends Component {
 
           </div>
         </div>
-
+        <TagGameCardBestPlayers
+          @recommended_players={{this.tagData.recommended_players}}
+          @best_players={{this.tagData.best_players}}
+        />
       </div>
     {{/if}}
   </template>
