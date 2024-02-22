@@ -2,6 +2,8 @@ import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { inject as service } from "@ember/service";
 import graphql from "../lib/graphql";
+import dIcon from "discourse-common/helpers/d-icon";
+import TagGameCardInfo from "./tag-game-card-info";
 
 const TAG_QUERY = `fragment productSummary on product {
   id
@@ -17,6 +19,11 @@ const TAG_QUERY = `fragment productSummary on product {
   bgg_ranking
   bgg_weight
   type
+  min_price_new
+  min_price_used
+  new_count
+  used_count
+  available
 }
 
 query productDetail($slug: String!) {
@@ -41,42 +48,55 @@ export default class TagGameCardContents extends Component {
 
     this.tagData = data.product[0];
 
+  console.log(this.tagData);
+
     if (!this.tagData) {
       this.router.transitionTo("tag.show", this.args.data.tag);
     }
   }
 
+  get tagDataJson() {
+    return JSON.stringify(this.tagData);
+  }
+
+  get redirectUrl() {
+    return `${settings.main_site_url}/item/${this.args.data.tag}`;
+  }
+
+  get thumbnail_url() {
+    return this.tagData.thumbnail_url ? this.tagData.thumbnail_url : "/images/no_image.png";
+  }
   <template>
     {{#if this.tagData}}
-      <div class="tag-game-card-contents">
+      <div class="tag-game-card-contents game-tag-card">
 
         <div class="flex w-full flex-col">
           <div class="flex">
-            
 
-            <div
-              class="flex h-32 w-32 cursor-pointer items-start rounded bg-contain bg-top bg-no-repeat sm:h-[9rem] sm:w-36"
-              style="background-image: url('{{this.tagData.thumbnail_url}}');">
-            </div>
+            <a href={{this.redirectUrl}}>
+              <div
+                class="game-tag-card__image"
+                style="background-image: url('{{this.thumbnail_url}}');"
+              />
+            </a>
 
-
-            <div class="flex flex-1 flex-col xl:px-2">
+            <div class="game-tag-card__body">
               <div class="px-2 pt-2">
-                <div
-                  class="text-md max-h-16 overflow-hidden pb-1 font-semibold leading-5 text-gray-700 dark:text-gray-200 md:max-h-12 md:leading-6 lg:max-h-14 xl:text-xl"
+                <a
+                  class="game-tag-card__title"
                   title={{this.tagData.name}}
-                  ref={{this.tagData.iconsRef}}>
+                  href={{this.redirectUrl}}
+                >
                   {{this.tagData.name}}
-                </div>
+                </a>
+                <TagGameCardInfo @tagData={{this.tagData}} />
               </div>
             </div>
 
-
           </div>
-        </div>    
-        
+        </div>
+
       </div>
     {{/if}}
   </template>
 }
-
