@@ -5,29 +5,33 @@ import graphql from "../lib/graphql";
 import dIcon from "discourse-common/helpers/d-icon";
 import TagGameCardInfo from "./tag-game-card-info";
 
-const TAG_QUERY = `fragment productSummary on product {
+const TAG_QUERY = `fragment productSummary on product_price { 
   id
-  slug
-  name
-  playing_time
-  min_playtime
-  max_playtime
-  max_players
-  min_players
-  thumbnail_url
-  bgg_rating
-  bgg_ranking
-  bgg_weight
-  type
   min_price_new
   min_price_used
   new_count
   used_count
   available
+  product {
+    slug
+    name
+    playing_time
+    min_playtime
+    max_playtime
+    max_players
+    min_players
+    thumbnail_url
+    bgg_rating
+    bgg_ranking
+    bgg_weight
+    type
+    recommended_players
+    best_players
+  }
 }
 
 query productDetail($slug: String!) {
-  product(where: { slug: { _eq: $slug } }) {
+  product_price(where: { product: { slug: { _eq: $slug } } }) {
     ...productSummary
   }
 }`;
@@ -35,6 +39,8 @@ query productDetail($slug: String!) {
 export default class TagGameCardContents extends Component {
   @service router;
   @tracked tagData;
+  @tracked priceData;
+
   @tracked tagDataJson;
 
   constructor() {
@@ -46,9 +52,14 @@ export default class TagGameCardContents extends Component {
   async fetchTagData() {
     const { data } = await graphql(TAG_QUERY, { slug: this.args.data.tag });
 
-    this.tagData = data.product[0];
+    this.priceData = data.product_price[0] || null;
+    this.tagData = this.priceData.product || null;
 
-  console.log(this.tagData);
+
+    console.log(this.priceData)
+    console.log(this.tagData)
+
+
 
     if (!this.tagData) {
       this.router.transitionTo("tag.show", this.args.data.tag);
@@ -64,7 +75,9 @@ export default class TagGameCardContents extends Component {
   }
 
   get thumbnail_url() {
-    return this.tagData.thumbnail_url ? this.tagData.thumbnail_url : "/images/no_image.png";
+    return this.tagData.thumbnail_url
+      ? this.tagData.thumbnail_url
+      : "/images/no_image.png";
   }
   <template>
     {{#if this.tagData}}
