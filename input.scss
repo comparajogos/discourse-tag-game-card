@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.tag-game-card-contents {
+  padding: 0.5em 1em;
+}
+
+[data-identifier="tag-game-card-contents"]:not(:has(.tag-game-card-contents)) {
+  display: none;
+}
+
+/* custom css */
+/*https://steelkiwi.medium.com/vertical-centering-until-the-block-reaches-specified-height-ea2e985f461*/
+.vwrap-parent {
+  /* We need next two lines it to avoid
+    a line break if the content wrapper becomes wider
+    than the parent block */
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* Magic! */
+.vwrap-parent:after {
+  content: "";
+  width: 0;
+  height: 2.75rem; /* this is the height */
+  display: inline-block;
+  vertical-align: middle;
+}
+.vwrap-parent .vertical-wrap {
+  white-space: normal; /* Allow line breaks inside the content wrapper */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/*https://stackoverflow.com/questions/43186015/css-hide-scroll-bar-but-have-element-scrollable*/
+.disable-h-scrollbar::-webkit-scrollbar {
+  height: 0px;
+  background: transparent; /* Chrome/Safari/Webkit */
+}
+
+.disable-h-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+/* react-image-lightbox */
+.ril-caption-content {
+  width: 100%;
+}
+
+/* transparent tap highlight on mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/** Filepond customizations */
+.filepond--item {
+  width: calc(50% - 0.5em);
+}
+
+.filepond--panel-root {
+  background-color: white !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* the background color of the filepond drop area */
+  .filepond--panel-root {
+    background-color: rgb(28 28 30) !important;
+  }
+  .filepond--drop-label {
+    color: white !important;
+  }
+}
