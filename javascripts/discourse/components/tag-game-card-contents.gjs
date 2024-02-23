@@ -41,7 +41,6 @@ export default class TagGameCardContents extends Component {
   @service router;
   @tracked tagData;
   @tracked priceData;
-
   @tracked tagDataJson;
 
   constructor() {
@@ -77,17 +76,14 @@ export default class TagGameCardContents extends Component {
   <template>
     {{#if this.tagData}}
       <div class="tag-game-card-contents game-tag-card">
-
         <div class="flex w-full flex-col">
           <div class="flex">
-
             <a href={{this.redirectUrl}}>
               <div
                 class="game-tag-card__image"
                 style="background-image: url('{{this.thumbnail_url}}');"
               />
             </a>
-
             <div class="game-tag-card__body">
               <div class="px-2 pt-2">
                 <a
@@ -99,14 +95,17 @@ export default class TagGameCardContents extends Component {
                 </a>
                 <TagGameCardInfo @tagData={{this.tagData}} />
               </div>
+              <div class="px-2 pt-2" style="display: inline-flex;">
+                {{#if this.tagData.recommended_players}}
+                  <TagGameCardPlayersCount
+                    @best_players={{this.tagData.best_players}}
+                    @recommended_players={{this.tagData.recommended_players}}
+                  />
+                {{/if}}
+              </div>
             </div>
-
           </div>
         </div>
-        <TagGameCardPlayersCount
-          @best_players={{this.tagData.best_players}}
-          @recommended_players={{this.tagData.recommended_players}}
-        />
       </div>
     {{/if}}
   </template>

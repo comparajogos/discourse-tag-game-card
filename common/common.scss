@@ -109,12 +109,16 @@
 }
 
 .game-tag-card {
-  font-family: Montserrat,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  font-family: Montserrat, ui-sans-serif, system-ui, -apple-system, Segoe UI,
+    Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont,
+    Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
   position: relative;
   background-color: rgba(23, 23, 23, var(--tw-bg-opacity));
   padding: 0.75rem;
   padding-top: 1rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 
   &__image {
     width: 9rem;
@@ -134,7 +138,7 @@
     padding-bottom: 0.25rem;
     font-weight: 600;
     line-height: 1.25rem;
-    color: rgba(229, 231, 235, var(--tw-text-opacity)) !important;
+    color: rgba(229, 231, 235) !important;
     @media (min-width: 768px) {
       max-height: 3rem;
       line-height: 1.5rem;
@@ -146,27 +150,27 @@
       font-size: 1.25rem;
     }
     a {
-      text-decoration: none;  
+      text-decoration: none;
     }
   }
 
   &__body {
     display: flex;
     flex-direction: column;
-    min-width: 20rem;
+    min-width: 18rem;
   }
 
   &__divisor {
     display: flex;
     box-sizing: border-box;
     border-top: 3px solid #e5e7eb;
-    justify-content: space-between; 
+    justify-content: space-between;
     padding-top: 0.25rem;
     font-size: 0.75rem;
-    letter-spacing: -.025em;
-    font-size: .75rem;
+    letter-spacing: -0.025em;
+    font-size: 0.75rem;
     line-height: 1rem;
-    color: rgba(229, 231, 235, var(--tw-text-opacity));
+    color: rgba(229, 231, 235);
   }
 
   &__info-item {
@@ -175,16 +179,27 @@
     align-items: center;
     user-select: none;
     svg {
-      display: var(--fa-display,inline-block);
       height: 1em;
       overflow: visible;
-      vertical-align: -.125em;
+      vertical-align: -0.125em;
       color: #d1d5db;
-      margin-right: .25rem;
+      margin-right: 0.25rem;
     }
   }
 
-  &__info-item-desc {
-
+  &__player-count {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    border-radius: 0.125rem;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    &--recommended {
+      background-color: rgba(22, 163, 74);
+    }
+    &--best {
+      background-color: rgba(20, 83, 45);
+    }
   }
 }

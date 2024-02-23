@@ -1,7 +1,6 @@
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { inject as service } from "@ember/service";
-import dIcon from "discourse-common/helpers/d-icon";
 import TagGameCardInfoItem from "./tag-game-card-info-item";
 
 export default class TagGameCardInfo extends Component {
