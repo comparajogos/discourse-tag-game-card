@@ -2,9 +2,9 @@ import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { inject as service } from "@ember/service";
 import i18n from "discourse-common/helpers/i18n"; 
-import TagGameCardInfoItem from "./tag-game-card-info-item";
+import TagGameCardIcon from "./tag-game-card-icon";
 
-export default class TagGameCardInfo extends Component {
+export default class TagGameCardIcons extends Component {
   @service router;
   @tracked tagData;
 
@@ -35,14 +35,12 @@ export default class TagGameCardInfo extends Component {
   get infoRating(){
     return `${this.tagData.bgg_rating.toFixed(1)}`;
   }
-
-  <template>
-    <div class="game-tag-card__divisor">
+  <template>    
       {{! Players }}
       {{#if this.tagData.min_players}}
         {{#if this.tagData.max_players}}
           <div>
-            <TagGameCardInfoItem
+            <TagGameCardIcon
               @icon="users"
               @info={{this.infoPlayers}}
               @text={{i18n (themePrefix "card.players")}}
@@ -50,12 +48,11 @@ export default class TagGameCardInfo extends Component {
           </div>
         {{/if}}
       {{/if}}
-
       {{! Time }}
       {{#if this.tagData.min_playtime}}
         {{#if this.tagData.max_playtime}}
           <div>
-            <TagGameCardInfoItem
+            <TagGameCardIcon
               @icon="clock"
               @info={{this.infoTime}}
               @text={{i18n (themePrefix "card.minutes")}}
@@ -63,29 +60,26 @@ export default class TagGameCardInfo extends Component {
           </div>
         {{/if}}
       {{/if}}
-
       {{! Complexity }}
       {{#if this.tagData.bgg_weight}}
           <div>            
-            <TagGameCardInfoItem
+            <TagGameCardIcon
               @icon="graduation-cap"
               @info={{this.infoComplexity}}
               @text={{i18n (themePrefix "card.complexity")}}
             />
           </div>
-      {{/if}}     
+      {{/if}}    
 
       {{! Rating }}
       {{#if this.tagData.bgg_rating}}
           <div>            
-            <TagGameCardInfoItem
+            <TagGameCardIcon
               @icon="star-half-alt"
               @info={{this.infoRating}}
               @text={{i18n (themePrefix "card.rating")}}
             />
           </div>
       {{/if}}
-
-    </div>
   </template>
 }

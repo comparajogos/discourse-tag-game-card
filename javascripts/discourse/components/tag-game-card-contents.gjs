@@ -1,11 +1,10 @@
 import Component from "@glimmer/component";
-import { tracked } from "@glimmer/tracking";
-import { inject as service } from "@ember/service";
-import graphql from "../lib/graphql";
-import dIcon from "discourse-common/helpers/d-icon";
-import TagGameCardInfo from "./tag-game-card-info";
-import TagGameCardPlayersCount from "./tag-game-card-players-count";
 import { htmlSafe } from "@ember/template";
+import { inject as service } from "@ember/service";
+import { tracked } from "@glimmer/tracking";
+import graphql from "../lib/graphql";
+import TagGameCardIcons from "./tag-game-card-icons";
+import TagGameCardPlayersCount from "./tag-game-card-players-count";
 
 const TAG_QUERY = `fragment productSummary on product_price { 
   id
@@ -60,6 +59,7 @@ export default class TagGameCardContents extends Component {
       this.router.transitionTo("tag.show", this.args.data.tag);
     }
   }
+  
   get redirectUrl() {
     return `${settings.main_site_url}/item/${this.args.data.tag}`;
   }
@@ -73,17 +73,13 @@ export default class TagGameCardContents extends Component {
       }');`
     );
   }
-  
   <template>
     {{#if this.tagData}}
       <div class="tag-game-card-contents game-tag-card">
         <div class="custom-col">
           <div style="display: flex;">
             <a href={{this.redirectUrl}}>
-              <div
-                class="game-tag-card__image"
-                style={{this.thumbnail_url}}
-              />
+              <div class="game-tag-card__image" style={{this.thumbnail_url}} />
             </a>
             <div class="game-tag-card__body">
               <div class="custom-container">
@@ -94,7 +90,9 @@ export default class TagGameCardContents extends Component {
                 >
                   {{this.tagData.name}}
                 </a>
-                <TagGameCardInfo @tagData={{this.tagData}} />
+                <div class="game-tag-card__divisor">
+                  <TagGameCardIcons @tagData={{this.tagData}} />
+                </div>
               </div>
               <div class="custom-container" style="display: inline-flex;">
                 {{#if this.tagData.recommended_players}}
