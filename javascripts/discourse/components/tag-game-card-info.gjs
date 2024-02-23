@@ -2,6 +2,7 @@ import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { inject as service } from "@ember/service";
 import TagGameCardInfoItem from "./tag-game-card-info-item";
+import i18n from "discourse-common/helpers/i18n";
 
 export default class TagGameCardInfo extends Component {
   @service router;
@@ -44,7 +45,7 @@ export default class TagGameCardInfo extends Component {
             <TagGameCardInfoItem
               @icon="users"
               @info={{this.infoPlayers}}
-              @text="jogadores"
+              @text={{i18n (themePrefix "card.players")}}
             />
           </div>
         {{/if}}
@@ -57,7 +58,7 @@ export default class TagGameCardInfo extends Component {
             <TagGameCardInfoItem
               @icon="clock"
               @info={{this.infoTime}}
-              @text="minutos"
+              @text={{i18n (themePrefix "card.minutes")}}
             />
           </div>
         {{/if}}
@@ -69,7 +70,7 @@ export default class TagGameCardInfo extends Component {
             <TagGameCardInfoItem
               @icon="graduation-cap"
               @info={{this.infoComplexity}}
-              @text="complexidade"
+              @text={{i18n (themePrefix "card.complexity")}}
             />
           </div>
       {{/if}}     
@@ -80,7 +81,7 @@ export default class TagGameCardInfo extends Component {
             <TagGameCardInfoItem
               @icon="star-half-alt"
               @info={{this.infoRating}}
-              @text="nota média"
+              @text={{i18n (themePrefix "card.rating")}}
             />
           </div>
       {{/if}}

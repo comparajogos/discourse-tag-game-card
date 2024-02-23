@@ -1,0 +1,10 @@
+pt-BR:
+  theme_metadata:
+    settings:
+      main_site_url: URL do site principal, deve ser uma instância do Compara Jogos
+      main_site_graphql_url: URL do GraphQL do site principal, deve ser uma instância do Compara Jogos
+  card:
+    players: jogadores
+    minutes: minutos
+    complexity: complexidade
+    rating: nota média
