@@ -104,7 +104,7 @@
   font-size: 1rem;
   line-height: 1.5rem;
   &--highlighted {
-    color: yellow;
+    color: var(--danger);
   }
 }
 
@@ -114,7 +114,6 @@
     Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
     Noto Color Emoji;
   position: relative;
-  background-color: rgba(23, 23, 23, var(--tw-bg-opacity));
   padding: 0.75rem;
   padding-top: 1rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
@@ -138,7 +137,7 @@
     padding-bottom: 0.25rem;
     font-weight: 600;
     line-height: 1.25rem;
-    color: rgba(229, 231, 235) !important;
+    color: var(--primary-rgb) !important;
     @media (min-width: 768px) {
       max-height: 3rem;
       line-height: 1.5rem;
@@ -163,14 +162,14 @@
   &__divisor {
     display: flex;
     box-sizing: border-box;
-    border-top: 3px solid #e5e7eb;
+    border-top: 3px solid var(--primary-700);
     justify-content: space-between;
     padding-top: 0.25rem;
     font-size: 0.75rem;
     letter-spacing: -0.025em;
     font-size: 0.75rem;
     line-height: 1rem;
-    color: rgba(229, 231, 235);
+    color: var(--primary-700);
   }
 
   &__info-item {
@@ -182,7 +181,7 @@
       height: 1em;
       overflow: visible;
       vertical-align: -0.125em;
-      color: #d1d5db;
+      color: var(--primary-rgb);
       margin-right: 0.25rem;
     }
   }
@@ -195,11 +194,12 @@
     margin-right: 1px;
     padding-left: 0.25rem;
     padding-right: 0.25rem;
+    color: var(--primary-rgb);
     &--recommended {
-      background-color: rgba(22, 163, 74);
+      background-color: var(--success-medium);
     }
     &--best {
-      background-color: rgba(20, 83, 45);
+      background-color: var(--wiki);
     }
   }
 }
