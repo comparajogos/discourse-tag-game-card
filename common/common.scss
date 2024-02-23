@@ -194,12 +194,12 @@
     margin-right: 1px;
     padding-left: 0.25rem;
     padding-right: 0.25rem;
-    color: var(--primary-rgb);
+    color: white;
     &--recommended {
-      background-color: var(--success-medium);
+      background-color: rgba(20,83,45);
     }
     &--best {
-      background-color: var(--wiki);
+      background-color: rgba(22,163,74);
     }
   }
 }
