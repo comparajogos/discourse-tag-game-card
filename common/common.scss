@@ -1,118 +1,25 @@
-[data-identifier="tag-game-card-contents"]:not(:has(.tag-game-card-contents)) {
-  display: none;
+.custom-container{
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
 }
-
-/* custom css */
-/*https://steelkiwi.medium.com/vertical-centering-until-the-block-reaches-specified-height-ea2e985f461*/
-.vwrap-parent {
-  /* We need next two lines it to avoid
-    a line break if the content wrapper becomes wider
-    than the parent block */
-  white-space: nowrap;
-  overflow: hidden;
-}
-/* Magic! */
-.vwrap-parent:after {
-  content: "";
-  width: 0;
-  height: 2.75rem; /* this is the height */
-  display: inline-block;
-  vertical-align: middle;
-}
-.vwrap-parent .vertical-wrap {
-  white-space: normal; /* Allow line breaks inside the content wrapper */
-  display: inline-block;
-  vertical-align: middle;
-}
-
-/*https://stackoverflow.com/questions/43186015/css-hide-scroll-bar-but-have-element-scrollable*/
-.disable-h-scrollbar::-webkit-scrollbar {
-  height: 0px;
-  background: transparent; /* Chrome/Safari/Webkit */
-}
-
-.disable-h-scrollbar {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
-}
-
-/* react-image-lightbox */
-.ril-caption-content {
+.custom-col{
+  display: flex;
   width: 100%;
-}
+  flex-direction: column;
 
-/* transparent tap highlight on mobile */
-* {
-  -webkit-tap-highlight-color: transparent;
-}
-
-/** Filepond customizations */
-.filepond--item {
-  width: calc(50% - 0.5em);
-}
-
-.filepond--panel-root {
-  background-color: white !important;
 }
 
 @media (prefers-color-scheme: dark) {
-  /* the background color of the filepond drop area */
-  .filepond--panel-root {
-    background-color: rgb(28 28 30) !important;
-  }
-  .filepond--drop-label {
-    color: white !important;
-  }
-}
-
-.bg-no-repeat {
-  background-repeat: no-repeat;
-}
-.bg-top {
-  background-position: top;
-}
-.bg-contain {
-  background-size: contain;
-}
-.rounded {
-  border-radius: 0.25rem;
-}
-.items-start {
-  align-items: flex-start;
-}
-.cursor-pointer {
-  cursor: pointer;
-}
-.flex {
-  display: flex;
-}
-.flex-col {
-  flex-direction: column;
-}
-.w-full {
-  width: 100%;
-}
-.px-2 {
-  padding-left: 0.5rem;
-}
-
-.pt-2 {
-  padding-top: 0.5rem;
-}
-
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  &--highlighted {
-    color: var(--danger);
+  .text-custom {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    &--highlighted {
+      color: var(--gold);
+    }
   }
 }
 
 .game-tag-card {
-  font-family: Montserrat, ui-sans-serif, system-ui, -apple-system, Segoe UI,
-    Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont,
-    Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
-    Noto Color Emoji;
   position: relative;
   padding: 0.75rem;
   padding-top: 1rem;
@@ -196,10 +103,10 @@
     padding-right: 0.25rem;
     color: white;
     &--recommended {
-      background-color: rgba(20,83,45);
+      background-color: rgba(20, 83, 45);
     }
     &--best {
-      background-color: rgba(22,163,74);
+      background-color: rgba(22, 163, 74);
     }
   }
 }

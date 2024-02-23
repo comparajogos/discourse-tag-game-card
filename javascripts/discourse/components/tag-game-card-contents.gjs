@@ -5,6 +5,7 @@ import graphql from "../lib/graphql";
 import dIcon from "discourse-common/helpers/d-icon";
 import TagGameCardInfo from "./tag-game-card-info";
 import TagGameCardPlayersCount from "./tag-game-card-players-count";
+import { htmlSafe } from "@ember/template";
 
 const TAG_QUERY = `fragment productSummary on product_price { 
   id
@@ -59,33 +60,33 @@ export default class TagGameCardContents extends Component {
       this.router.transitionTo("tag.show", this.args.data.tag);
     }
   }
-
-  get tagDataJson() {
-    return JSON.stringify(this.tagData);
-  }
-
   get redirectUrl() {
     return `${settings.main_site_url}/item/${this.args.data.tag}`;
   }
 
   get thumbnail_url() {
-    return this.tagData.thumbnail_url
-      ? this.tagData.thumbnail_url
-      : "/images/no_image.png";
+    return htmlSafe(
+      `background-image: url('${
+        this.tagData.thumbnail_url
+          ? this.tagData.thumbnail_url
+          : "https://www.comparajogos.com.br/images/no_image.png"
+      }');`
+    );
   }
+  
   <template>
     {{#if this.tagData}}
       <div class="tag-game-card-contents game-tag-card">
-        <div class="flex w-full flex-col">
-          <div class="flex">
+        <div class="custom-col">
+          <div style="display: flex;">
             <a href={{this.redirectUrl}}>
               <div
                 class="game-tag-card__image"
-                style="background-image: url('{{this.thumbnail_url}}');"
+                style={{this.thumbnail_url}}
               />
             </a>
             <div class="game-tag-card__body">
-              <div class="px-2 pt-2">
+              <div class="custom-container">
                 <a
                   class="game-tag-card__title"
                   title={{this.tagData.name}}
@@ -95,7 +96,7 @@ export default class TagGameCardContents extends Component {
                 </a>
                 <TagGameCardInfo @tagData={{this.tagData}} />
               </div>
-              <div class="px-2 pt-2" style="display: inline-flex;">
+              <div class="custom-container" style="display: inline-flex;">
                 {{#if this.tagData.recommended_players}}
                   <TagGameCardPlayersCount
                     @best_players={{this.tagData.best_players}}

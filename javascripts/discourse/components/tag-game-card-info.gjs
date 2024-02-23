@@ -1,8 +1,8 @@
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { inject as service } from "@ember/service";
+import i18n from "discourse-common/helpers/i18n"; 
 import TagGameCardInfoItem from "./tag-game-card-info-item";
-import i18n from "discourse-common/helpers/i18n";
 
 export default class TagGameCardInfo extends Component {
   @service router;

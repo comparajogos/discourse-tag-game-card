@@ -1,8 +1,6 @@
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
-import { inject as service } from "@ember/service";
 import { bind } from "discourse-common/utils/decorators";
-import dIcon from "discourse-common/helpers/d-icon";
 
 export default class TagGameCardPlayersCount extends Component {
   @tracked allPlayers;

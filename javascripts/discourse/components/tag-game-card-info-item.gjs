@@ -19,7 +19,7 @@ export default class TagGameCardInfoItem extends Component {
   <template>
     <div class="game-tag-card__info-item">
       {{dIcon this.icon class="game-tag-card__icon"}}
-      <span class="text-base--highlighted">
+      <span class="text-custom--highlighted">
         {{this.info}}
       </span>
     </div>
