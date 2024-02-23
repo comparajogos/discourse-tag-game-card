@@ -1,14 +1,12 @@
 import Component from "@glimmer/component";
-import { tracked } from "@glimmer/tracking";
 import { bind } from "discourse-common/utils/decorators";
 
 export default class TagGameCardPlayersCount extends Component {
-  @tracked allPlayers;
   constructor() {
     super(...arguments);
-    this.allPlayers = this.allPlayerCounts;
   }
 
+  @bind
   get allPlayerCounts() {
     return Array.from(
       new Set([...this.args.best_players, ...this.args.recommended_players])
@@ -25,7 +23,7 @@ export default class TagGameCardPlayersCount extends Component {
   }
 
   <template>
-    {{#each this.allPlayers as |count|}}
+    {{#each this.allPlayerCounts  as |count|}}
       <span class={{this.getPlayerCountClass count}}>
         {{count}}
       </span>
