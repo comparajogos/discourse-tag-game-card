@@ -69,7 +69,7 @@ export default class TagGameCardContents extends Component {
       `background-image: url('${
         this.tagData.thumbnail_url
           ? this.tagData.thumbnail_url
-          : "https://www.comparajogos.com.br/images/no_image.png"
+          : `${settings.main_site_url}/images/no_image.png`
       }');`
     );
   }
