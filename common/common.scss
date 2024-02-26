@@ -9,7 +9,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .text-custom {
+  .text {
     font-size: 1rem;
     line-height: 1.5rem;
     &--highlighted {
@@ -107,5 +107,22 @@
     &--best {
       background-color: rgba(20, 83, 45);
     }
+  }
+
+  &__ranking {
+    display: flex;
+    font-weight: 700;
+    position: absolute;
+    top: 1px;
+    right: .25rem;
+    align-items: center;
+    font-size: .75rem;
+    line-height: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    justify-content: flex-end;
+    width: 100%;
   }
 }
