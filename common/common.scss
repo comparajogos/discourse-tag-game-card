@@ -12,6 +12,7 @@
   .text {
     font-size: 1rem;
     line-height: 1.5rem;
+    cursor: default;
     &--highlighted {
       color: var(--gold);
     }
@@ -114,15 +115,37 @@
     font-weight: 700;
     position: absolute;
     top: 1px;
-    right: .25rem;
+    right: 0.25rem;
     align-items: center;
-    font-size: .75rem;
+    font-size: 0.75rem;
     line-height: 1rem;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-    padding-left: .5rem;
-    padding-right: .5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     justify-content: flex-end;
     width: 100%;
+  }
+
+  &__ranking-contents:hover &__tooltip--ranking {
+    visibility: visible !important;
+  }
+
+  &__tooltip {
+    position: absolute;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 0.25rem;
+    z-index: 10;
+    background-color: var(--header_background);
+    border-radius: 0.25rem;
+    &--ranking {
+      visibility: hidden;
+      font-weight: 700;
+      margin-top: -1.5rem;
+      margin-left: -2rem;
+    }
   }
 }
