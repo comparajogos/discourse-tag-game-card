@@ -1,12 +1,11 @@
-.custom-container{
+.custom-container {
   padding-left: 0.5rem;
   padding-top: 0.5rem;
 }
-.custom-col{
+.custom-col {
   display: flex;
   width: 100%;
   flex-direction: column;
-
 }
 
 @media (prefers-color-scheme: dark) {

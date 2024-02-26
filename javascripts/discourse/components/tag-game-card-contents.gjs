@@ -59,11 +59,9 @@ export default class TagGameCardContents extends Component {
       this.router.transitionTo("tag.show", this.args.data.tag);
     }
   }
-  
   get redirectUrl() {
     return `${settings.main_site_url}/item/${this.args.data.tag}`;
   }
-
   get thumbnail_url() {
     return htmlSafe(
       `background-image: url('${
