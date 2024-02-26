@@ -9,7 +9,7 @@ export default class TagGameCardPlayersCount extends Component {
   get allPlayerCounts() {
     return Array.from(
       new Set([...this.args.best_players, ...this.args.recommended_players])
-    ).sort((a, b) => parseInt(a) - parseInt(b));
+    ).sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
   }
 
   @bind

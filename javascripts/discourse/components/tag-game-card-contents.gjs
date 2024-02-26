@@ -1,7 +1,7 @@
 import Component from "@glimmer/component";
-import { htmlSafe } from "@ember/template";
-import { inject as service } from "@ember/service";
 import { tracked } from "@glimmer/tracking";
+import { inject as service } from "@ember/service";
+import { htmlSafe } from "@ember/template";
 import graphql from "../lib/graphql";
 import TagGameCardIcons from "./tag-game-card-icons";
 import TagGameCardPlayersCount from "./tag-game-card-players-count";
