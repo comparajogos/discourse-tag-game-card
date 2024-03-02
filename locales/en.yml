@@ -3,3 +3,8 @@ en:
     settings:
       main_site_url: Main site URL, should be a Compara Jogos instance
       main_site_graphql_url: Main site GraphQL URL, should be a Compara Jogos instance
+  card:
+    players: players
+    minutes: minutes
+    complexity: complexity
+    rating: rating
