@@ -7,7 +7,9 @@ export default class TagGameCardRanking extends Component {
   }
   <template>
     <div class="game-tag-card__ranking-contents">
-      <div class="game-tag-card__tooltip game-tag-card__tooltip--ranking">Ranking</div>
+      <div
+        class="game-tag-card__tooltip game-tag-card__tooltip--ranking"
+      >Ranking</div>
       <span class="text--highlighted" style="margin-inline: 1px;">
         {{@ranking}}º
       </span>
