@@ -15,7 +15,9 @@ export default class TagGameCardPrice extends Component {
       integerPart
     );
     return htmlSafe(
-      `<span class="game-tag-card__price--highlighted"><sup style="top:-0.2rem"><small>R$</small></sup><span>${formattedIntegerPart}</span><sup style="top:-0.2rem"><small>,${decimalPart ? decimalPart : "00"}</small></sup></span>`
+      `<span class="game-tag-card__price--highlighted"><sup style="top:-0.2rem"><small>R$</small></sup><span>${formattedIntegerPart}</span><sup style="top:-0.2rem"><small>,${
+        decimalPart ? decimalPart : "00"
+      }</small></sup></span>`
     );
   }
 
