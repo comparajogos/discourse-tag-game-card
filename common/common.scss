@@ -148,4 +148,31 @@
       margin-left: -2rem;
     }
   }
+
+  &__price {
+    justify-content: flex-end;
+    text-align: right;
+    align-items: center;
+    display: flex;
+    &--used {
+      margin-left: 1px;
+      margin-right: 1px;
+      font-size: 0.75rem;
+      line-height: 1rem;
+    }
+    &--new {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      letter-spacing: 0;
+    }
+    &--highlighted {
+      color: var(--gold) !important;
+      font-weight: 600;
+    }
+    &--count {
+      font-size: .75rem;
+      line-height: 1rem;
+      letter-spacing: -.025em;
+    }
+  }
 }

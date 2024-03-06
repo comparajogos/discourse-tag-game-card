@@ -5,6 +5,7 @@ import { htmlSafe } from "@ember/template";
 import graphql from "../lib/graphql";
 import TagGameCardIcons from "./tag-game-card-icons";
 import TagGameCardPlayersCount from "./tag-game-card-players-count";
+import TagGameCardPrice from "./tag-game-card-price";
 import TagGameCardRanking from "./tag-game-card-ranking";
 
 const TAG_QUERY = `fragment productSummary on product_price { 
@@ -98,13 +99,21 @@ export default class TagGameCardContents extends Component {
                   <TagGameCardIcons @tagData={{this.tagData}} />
                 </div>
               </div>
-              <div class="custom-container" style="display: inline-flex;">
-                {{#if this.tagData.recommended_players}}
+              {{#if this.tagData.recommended_players}}
+                <div class="custom-container" style="display: inline-flex;">
                   <TagGameCardPlayersCount
                     @best_players={{this.tagData.best_players}}
                     @recommended_players={{this.tagData.recommended_players}}
                   />
-                {{/if}}
+                </div>
+              {{/if}}
+              <div class="custom-container">
+                <TagGameCardPrice
+                  @min_price_new={{this.priceData.min_price_new}}
+                  @min_price_used={{this.priceData.min_price_used}}
+                  @new_count={{this.priceData.new_count}}
+                  @used_count={{this.priceData.used_count}}
+                />
               </div>
             </div>
           </div>
