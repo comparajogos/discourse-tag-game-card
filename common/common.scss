@@ -64,6 +64,10 @@
     font-weight: 600;
     line-height: 1.25rem;
     color: var(--primary-rgb) !important;
+    @media (max-width: 450px) {
+      width: min-content;
+      display: inline-block;
+    }
     @media (min-width: 768px) {
       max-height: 3rem;
       line-height: 1.5rem;
