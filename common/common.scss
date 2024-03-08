@@ -64,6 +64,7 @@
     font-weight: 600;
     line-height: 1.25rem;
     color: var(--primary-rgb) !important;
+    font-size: 1.25rem;
     @media (max-width: 450px) {
       width: min-content;
       display: inline-block;
@@ -97,9 +98,8 @@
     border-top: 3px solid var(--primary-700);
     justify-content: space-between;
     padding-top: 0.25rem;
-    font-size: 0.75rem;
     letter-spacing: -0.025em;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     line-height: 1rem;
     color: var(--primary-700);
 
@@ -157,7 +157,7 @@
     top: 1px;
     right: 0.25rem;
     align-items: center;
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     line-height: 1rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -197,11 +197,11 @@
     &--used {
       margin-left: 1px;
       margin-right: 1px;
-      font-size: 0.8rem;
+      font-size: 1rem;
       line-height: 1rem;
     }
     &--new {
-      font-size: 1rem;
+      font-size: 1.25rem;
       line-height: 1.5rem;
       letter-spacing: 0;
     }

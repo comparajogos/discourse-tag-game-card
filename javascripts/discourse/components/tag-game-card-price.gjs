@@ -43,7 +43,7 @@ export default class TagGameCardPrice extends Component {
           </div>
         {{/if}}
         {{#if @min_price_used}}
-          <div style="opacity: 0.8; margin-top: -0.5rem;">
+          <div style="opacity: 0.8; margin-top: -0.25rem;">
             <span class="game-tag-card__price--used">
               {{this.getFormattedPrice @min_price_used}}
             </span>
