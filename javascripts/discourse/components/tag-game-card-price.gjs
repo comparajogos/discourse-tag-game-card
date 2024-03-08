@@ -30,7 +30,7 @@ export default class TagGameCardPrice extends Component {
   }
   <template>
     <div class="game-tag-card__price">
-      <div class="group">
+      <div>
         {{#if @min_price_new}}
           <div>
             <span class="game-tag-card__price--new">

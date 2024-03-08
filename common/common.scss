@@ -1,3 +1,22 @@
+@media (min-width: 501px) {
+  .only-desktop {
+    display: block;
+  }
+
+  .only-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .only-desktop {
+    display: none;
+  }
+  .only-mobile {
+    display: block;
+  }
+}
+
 .custom-container {
   padding-left: 0.5rem;
   padding-top: 0.5rem;
@@ -63,7 +82,9 @@
   &__body {
     display: flex;
     flex-direction: column;
-    min-width: 18rem;
+    @media (min-width: 500px) {
+      min-width: 18rem;
+    }
   }
 
   &__divisor {
@@ -77,6 +98,18 @@
     font-size: 0.75rem;
     line-height: 1rem;
     color: var(--primary-700);
+
+    @media (max-width: 350px) {
+      flex-wrap: wrap;
+      flex-direction: column;
+      max-height: 4rem;
+    }
+
+    @media (min-width: 351px) and (max-width: 500px) {
+      &--spacing {
+        margin-left: 0.5rem;
+      }
+    }
   }
 
   &__info-item {
@@ -84,6 +117,9 @@
     flex-direction: row;
     align-items: center;
     user-select: none;
+    @media (max-width: 350px) {
+      margin-bottom: 0.5rem;
+    }
     svg {
       height: 1em;
       overflow: visible;
