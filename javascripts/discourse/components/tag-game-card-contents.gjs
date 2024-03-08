@@ -3,6 +3,7 @@ import { tracked } from "@glimmer/tracking";
 import { inject as service } from "@ember/service";
 import { htmlSafe } from "@ember/template";
 import graphql from "../lib/graphql";
+import i18n from "discourse-common/helpers/i18n";
 import TagGameCardIcons from "./tag-game-card-icons";
 import TagGameCardPlayersCount from "./tag-game-card-players-count";
 import TagGameCardPrice from "./tag-game-card-price";
@@ -83,7 +84,7 @@ export default class TagGameCardContents extends Component {
         {{/if}}
         <div class="custom-col">
           <div style="display: flex;">
-            <a href={{this.redirectUrl}}>
+            <a href={{this.redirectUrl}} style="align-self: center;">
               <div class="game-tag-card__image" style={{this.thumbnail_url}} />
             </a>
             <div class="game-tag-card__body">
@@ -114,6 +115,11 @@ export default class TagGameCardContents extends Component {
                   @new_count={{this.priceData.new_count}}
                   @used_count={{this.priceData.used_count}}
                 />
+                <div class="game-tag-card__visit-item">
+                  <a href={{this.redirectUrl}}>
+                    {{i18n (themePrefix "card.visitItem")}}
+                  </a>
+                </div>
               </div>
             </div>
           </div>

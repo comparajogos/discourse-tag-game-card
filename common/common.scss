@@ -212,4 +212,20 @@
       letter-spacing: -0.025em;
     }
   }
+  &__visit-item {
+    justify-content: flex-end;
+    text-align: right;
+    align-items: center;
+    display: flex;
+    margin-left: 0.5rem;
+    a {
+      overflow: hidden;
+      padding-bottom: 0.25rem;
+      font-weight: 600;
+      line-height: 1.25rem;
+      color: var(--primary-rgb) !important;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
 }
