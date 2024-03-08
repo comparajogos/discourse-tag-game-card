@@ -6,7 +6,7 @@ import i18n from "discourse-common/helpers/i18n";
 import graphql from "../lib/graphql";
 import TagGameCardIcons from "./tag-game-card-icons";
 import TagGameCardPlayersCount from "./tag-game-card-players-count";
-import TagGameCardPrice from "./tag-game-card-price";
+import TagGameCardPrices from "./tag-game-card-prices";
 import TagGameCardRanking from "./tag-game-card-ranking";
 
 const TAG_QUERY = `fragment productSummary on product_price { 
@@ -84,7 +84,7 @@ export default class TagGameCardContents extends Component {
         {{/if}}
         <div class="custom-col">
           <div style="display: flex;">
-            <a href={{this.redirectUrl}} style="align-self: center;">
+            <a href={{this.redirectUrl}} class="game-tag-card__image--center">
               <div class="game-tag-card__image" style={{this.thumbnail_url}} />
             </a>
             <div class="game-tag-card__body">
@@ -101,7 +101,7 @@ export default class TagGameCardContents extends Component {
                 </div>
               </div>
               {{#if this.tagData.recommended_players}}
-                <div class="custom-container" style="display: inline-flex;">
+                <div class="custom-container custom-container--inline">
                   <TagGameCardPlayersCount
                     @best_players={{this.tagData.best_players}}
                     @recommended_players={{this.tagData.recommended_players}}
@@ -109,7 +109,7 @@ export default class TagGameCardContents extends Component {
                 </div>
               {{/if}}
               <div class="custom-container">
-                <TagGameCardPrice
+                <TagGameCardPrices
                   @min_price_new={{this.priceData.min_price_new}}
                   @min_price_used={{this.priceData.min_price_used}}
                   @new_count={{this.priceData.new_count}}

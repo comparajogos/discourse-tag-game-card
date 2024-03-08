@@ -20,6 +20,9 @@
 .custom-container {
   padding-left: 0.5rem;
   padding-top: 0.5rem;
+  &--inline {
+    display: inline-flex;
+  }
 }
 .custom-col {
   display: flex;
@@ -55,6 +58,9 @@
     align-items: flex-start;
     cursor: pointer;
     display: flex;
+    &--center {
+      align-self: center;
+    }
   }
 
   &__title {
@@ -191,13 +197,7 @@
     align-items: center;
     display: flex;
     margin-left: 0.5rem;
-    &--used {
-      margin-left: 1px;
-      margin-right: 1px;
-      font-size: 1rem;
-      line-height: 1rem;
-    }
-    &--new {
+    &--text {
       font-size: 1.25rem;
       line-height: 1.5rem;
       letter-spacing: 0;
@@ -210,6 +210,14 @@
       font-size: 0.75rem;
       line-height: 1rem;
       letter-spacing: -0.025em;
+    }
+    &--opacity-used {
+      opacity: 0.8;
+      margin-top: -0.25rem;
+      span {
+        line-height: 1rem;
+        font-size: 1rem !important;
+      }
     }
   }
   &__visit-item {
@@ -226,6 +234,9 @@
       color: var(--primary-rgb) !important;
       text-decoration: underline;
       cursor: pointer;
+    }
+    &__sup {
+      top: -0.2rem;
     }
   }
 }
