@@ -1,6 +1,4 @@
 import Component from "@glimmer/component";
-import { htmlSafe } from "@ember/template";
-import { bind } from "discourse-common/utils/decorators";
 import i18n from "discourse-common/helpers/i18n";
 
 export default class TagGameCardPrice extends Component {
