@@ -1,5 +1,5 @@
 import Component from "@glimmer/component";
-import i18n from "discourse-common/helpers/i18n";
+import { bind } from "discourse-common/utils/decorators";
 
 export default class TagGameCardPrice extends Component {
   constructor() {
