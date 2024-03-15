@@ -12,7 +12,7 @@ export default class TagGameCardIcon extends Component {
         {{@info}}
       </span>
     </div>
-    <div class="game-tag-card__info-item-desc">
+    <div class="game-tag-card__info-item-desc only-desktop">
       {{@text}}
     </div>
   </template>
