@@ -71,7 +71,6 @@
     color: var(--primary-rgb) !important;
     font-size: 1.25rem;
     @media (max-width: 450px) {
-      width: min-content;
       display: inline-block;
     }
     @media (min-width: 768px) {
