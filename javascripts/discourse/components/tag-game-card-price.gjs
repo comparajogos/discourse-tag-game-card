@@ -2,10 +2,6 @@ import Component from "@glimmer/component";
 import { bind } from "discourse-common/utils/decorators";
 
 export default class TagGameCardPrice extends Component {
-  constructor() {
-    super(...arguments);
-  }
-
   @bind
   pluralize(count) {
     if (count > 1) {

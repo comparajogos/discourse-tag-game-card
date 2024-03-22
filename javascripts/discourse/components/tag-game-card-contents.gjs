@@ -9,7 +9,7 @@ import TagGameCardPlayersCount from "./tag-game-card-players-count";
 import TagGameCardPrices from "./tag-game-card-prices";
 import TagGameCardRanking from "./tag-game-card-ranking";
 
-const TAG_QUERY = `fragment productSummary on product_price { 
+const TAG_QUERY = `fragment productSummary on product_price {
   id
   min_price_new
   min_price_used
@@ -62,10 +62,12 @@ export default class TagGameCardContents extends Component {
       this.router.transitionTo("tag.show", this.args.data.tag);
     }
   }
+
   get redirectUrl() {
     return `${settings.main_site_url}/item/${this.args.data.tag}`;
   }
-  get thumbnail_url() {
+
+  get thumbnailUrl() {
     return htmlSafe(
       `background-image: url('${
         this.tagData.thumbnail_url
@@ -74,6 +76,7 @@ export default class TagGameCardContents extends Component {
       }');`
     );
   }
+
   <template>
     {{#if this.tagData}}
       <div class="tag-game-card-contents game-tag-card">
@@ -85,7 +88,7 @@ export default class TagGameCardContents extends Component {
         <div class="custom-col">
           <div style="display: flex;">
             <a href={{this.redirectUrl}} class="game-tag-card__image--center">
-              <div class="game-tag-card__image" style={{this.thumbnail_url}} />
+              <div class="game-tag-card__image" style={{this.thumbnailUrl}} />
             </a>
             <div class="game-tag-card__body">
               <div class="custom-container">

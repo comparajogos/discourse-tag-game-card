@@ -6,12 +6,8 @@ import TagGameCardIcon from "./tag-game-card-icon";
 
 export default class TagGameCardIcons extends Component {
   @service router;
-  @tracked tagData;
 
-  constructor() {
-    super(...arguments);
-    this.tagData = this.args.tagData;
-  }
+  tagData = this.args.tagData;
 
   get infoPlayers() {
     if (this.tagData.min_players === this.tagData.max_players) {
@@ -35,6 +31,7 @@ export default class TagGameCardIcons extends Component {
   get infoRating() {
     return `${this.tagData.bgg_rating.toFixed(1)}`;
   }
+
   <template>
     {{! Players }}
     {{#if this.tagData.min_players}}
@@ -70,7 +67,6 @@ export default class TagGameCardIcons extends Component {
         />
       </div>
     {{/if}}
-
     {{! Rating }}
     {{#if this.tagData.bgg_rating}}
       <div class="game-tag-card__divisor--spacing">
