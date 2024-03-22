@@ -97,9 +97,10 @@
     }
   }
 
-  &__divisor {
+  &__icons {
     display: flex;
     box-sizing: border-box;
+    gap: 1em;
     border-top: 3px solid var(--primary-700);
     justify-content: space-between;
     padding-top: 0.25rem;

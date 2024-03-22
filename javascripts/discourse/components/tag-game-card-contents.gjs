@@ -99,7 +99,7 @@ export default class TagGameCardContents extends Component {
                 >
                   {{this.tagData.name}}
                 </a>
-                <div class="game-tag-card__divisor">
+                <div class="game-tag-card__icons">
                   <TagGameCardIcons @tagData={{this.tagData}} />
                 </div>
               </div>
