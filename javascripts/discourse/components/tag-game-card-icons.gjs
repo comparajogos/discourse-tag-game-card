@@ -47,7 +47,7 @@ export default class TagGameCardIcons extends Component {
     {{! Time }}
     {{#if this.tagData.min_playtime}}
       {{#if this.tagData.max_playtime}}
-        <div class="game-tag-card__divisor--spacing">
+        <div class="game-tag-card__icons--spacing">
           <TagGameCardIcon
             @icon="clock"
             @info={{this.infoTime}}
@@ -58,7 +58,7 @@ export default class TagGameCardIcons extends Component {
     {{/if}}
     {{! Complexity }}
     {{#if this.tagData.bgg_weight}}
-      <div class="game-tag-card__divisor--spacing">
+      <div class="game-tag-card__icons--spacing">
         <TagGameCardIcon
           @icon="graduation-cap"
           @info={{this.infoComplexity}}
@@ -68,7 +68,7 @@ export default class TagGameCardIcons extends Component {
     {{/if}}
     {{! Rating }}
     {{#if this.tagData.bgg_rating}}
-      <div class="game-tag-card__divisor--spacing">
+      <div class="game-tag-card__icons--spacing">
         <TagGameCardIcon
           @icon="star-half-alt"
           @info={{this.infoRating}}
