@@ -108,6 +108,7 @@
     font-size: 0.8rem;
     line-height: 1rem;
     color: var(--primary-700);
+    text-wrap: nowrap;
 
     @media (max-width: 350px) {
       flex-wrap: wrap;
