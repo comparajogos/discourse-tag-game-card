@@ -1,5 +1,4 @@
 import Component from "@glimmer/component";
-import { tracked } from "@glimmer/tracking";
 import { inject as service } from "@ember/service";
 import i18n from "discourse-common/helpers/i18n";
 import TagGameCardIcon from "./tag-game-card-icon";
